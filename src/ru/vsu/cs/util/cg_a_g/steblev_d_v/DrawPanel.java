@@ -55,8 +55,8 @@ public class DrawPanel extends JPanel implements ActionListener {
         g.setColor(Color.BLACK);
         for (int j = 0; j < 18; j++) {
             for (int k = 0; k < 10; k++) {
-                g.fillOval((j * 45 + 50), 460, 4, 4);
-                g.fillOval((k * 80 + 60), 545, 4, 4);
+                g.fillOval((j * 45 + 50), 460, 3, 3);
+                g.fillOval((k * 80 + 60), 545, 3, 3);
             }
         }
         ship.setX(ticksFromStart);
