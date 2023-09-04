@@ -59,6 +59,18 @@ public class Ship {
         g.fillRect(this.x + 200, this.y - 140, 40, 35);
 
 
+        // Окна
+        g.setColor(new Color(66, 171, 219));
+        for (int i = 0; i < 4; i++) {
+            g.fillRect(this.x + i * 35 + 163, this.y - 74, 25, 12);
+
+        }
+        g.setColor(Color.BLACK);
+        for (int i = 0; i < 4; i++) {
+            g.drawRect(this.x + i * 35 + 163, this.y - 74, 25, 12);
+        }
+
+
         
 
 
