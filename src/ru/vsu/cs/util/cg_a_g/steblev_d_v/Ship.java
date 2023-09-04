@@ -1,3 +1,5 @@
+package ru.vsu.cs.util.cg_a_g.steblev_d_v;
+
 import java.awt.*;
 
 public class Ship {
