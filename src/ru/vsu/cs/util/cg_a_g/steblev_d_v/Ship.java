@@ -58,7 +58,7 @@ public class Ship {
         g.fillPolygon(new int[] {this.x + 300, this.x + 285, this.x + 285}, new int[] {this.y - 75, this.y - 75, this.y - 105}, 3);
         g.fillRect(this.x + 200, this.y - 140, 40, 35);
 
-
+        //
 
 
         // Окна
@@ -96,3 +96,4 @@ public class Ship {
 
     }
 }
+
