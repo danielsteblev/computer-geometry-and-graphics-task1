@@ -1,10 +1,11 @@
 package ru.vsu.cs.util.cg_a_g.steblev_d_v;
 
+import org.w3c.dom.Text;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.Time;
 
 public class DrawPanel extends JPanel implements ActionListener {
     private final int PANEL_WIDTH;
@@ -20,6 +21,9 @@ public class DrawPanel extends JPanel implements ActionListener {
         timer = new Timer(timerDelay, this);
         timer.start();
         this.ship = new Ship(ticksFromStart, 255);
+
+
+
 
 
     }
@@ -57,6 +61,11 @@ public class DrawPanel extends JPanel implements ActionListener {
         }
         ship.setX(ticksFromStart);
         ship.drawShip(gr);
+
+        // Текст
+        g.setColor(Color.WHITE);
+        g.setFont(new Font("Times", Font.BOLD|Font.ITALIC, 30));
+        g.drawString("♪*BIG BAND*", 300, 540);
 
 
     }
