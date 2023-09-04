@@ -65,7 +65,7 @@ public class DrawPanel extends JPanel implements ActionListener {
         // Текст
         g.setColor(Color.WHITE);
         g.setFont(new Font("Times", Font.BOLD|Font.ITALIC, 30));
-        g.drawString("♪*BIG BAND*", 300, 540);
+        g.drawString("♪ *BIG BAND*", 300, 540);
 
 
     }

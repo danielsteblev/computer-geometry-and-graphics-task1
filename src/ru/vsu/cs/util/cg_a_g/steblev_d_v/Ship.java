@@ -58,7 +58,14 @@ public class Ship {
         g.fillPolygon(new int[] {this.x + 300, this.x + 285, this.x + 285}, new int[] {this.y - 75, this.y - 75, this.y - 105}, 3);
         g.fillRect(this.x + 200, this.y - 140, 40, 35);
 
-        //
+        // Спасательный круг
+        g.setColor(new Color(225, 77, 0));
+        g.fillOval(this.x + 130, this.y - 50, 40, 40);
+        g.setColor(new Color(220, 216, 213));
+        g.fillOval(this.x + 137, this.y - 43, 25, 25);
+        g.setColor(Color.BLACK);
+        g.drawLine(this.x + 130, this.y - 30, this.x + 170, this.y - 30);
+        g.drawLine(this.x + 150, this.y + - 50, this.x + 150, this.y + - 11);
 
 
         // Окна
