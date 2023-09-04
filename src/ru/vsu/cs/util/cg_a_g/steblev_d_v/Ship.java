@@ -98,6 +98,7 @@ public class Ship {
         g.drawLine(this.x + 285, this.y - 105, this.x + 298, this.y - 80);
         g.drawLine(this.x + 200, this.y - 105, this.x + 200, this.y - 140);
         g.drawLine(this.x + 200, this.y - 140, this.x + 240, this.y - 140);
+        g.drawLine(this.x + 200, this.y - 130, this.x + 240, this.y - 130);
         g.drawLine(this.x + 240, this.y - 105, this.x + 240, this.y - 140);
         g.drawLine(this.x + 100, this.y - 40, this.x + 150, this.y - 80);
         g.drawOval(this.x + 130, this.y - 50, 40, 40);
