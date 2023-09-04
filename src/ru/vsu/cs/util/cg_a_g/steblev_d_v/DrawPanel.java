@@ -56,7 +56,7 @@ public class DrawPanel extends JPanel implements ActionListener {
             }
         }
         ship.setX(ticksFromStart);
-        ship.drawPicture(gr);
+        ship.drawShip(gr);
 
 
     }

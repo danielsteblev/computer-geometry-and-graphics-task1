@@ -20,7 +20,7 @@ public class Ship {
         this.y = y;
     }
 
-    void drawPicture(final Graphics gr){
+    void drawShip(final Graphics gr){
         Graphics2D g = (Graphics2D) gr;
 
         // Нижняя часть корабля
