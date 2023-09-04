@@ -59,6 +59,8 @@ public class Ship {
         g.fillRect(this.x + 200, this.y - 140, 40, 35);
 
 
+
+
         // Окна
         g.setColor(new Color(66, 171, 219));
         for (int i = 0; i < 4; i++) {
@@ -70,11 +72,27 @@ public class Ship {
             g.drawRect(this.x + i * 35 + 163, this.y - 74, 25, 12);
         }
 
+        // Окантовка корабля
+        g.drawLine(this.x, this.y, this.x, this.y - 55 );
+        g.drawLine(this.x, this.y - 55, this.x + 120, this.y - 55 );
+        for (int i = 0; i < 13; i++) {
+            g.drawLine(this.x + i * 10, this.y - 55, this.x + i * 10, this.y - 40);
 
-        
-
-
-
+        }
+        g.drawLine(this.x, this.y - 40, this.x + 120, this.y - 40 );
+        g.drawLine(this.x + 120, this.y - 40, this.x + 120, this.y - 55);
+        g.drawLine(this.x + 120, this.y - 55, this.x + 400, this.y - 55);
+        g.drawLine(this.x + 150, this.y - 55, this.x + 150, this.y - 80);
+        g.drawLine(this.x + 150, this.y - 55, this.x + 150, this.y - 80);
+        g.drawLine(this.x + 150, this.y - 80, this.x + 310, this.y - 80);
+        g.drawLine(this.x + 310, this.y - 55, this.x + 310, this.y - 80);
+        g.drawLine(this.x + 165, this.y - 80, this.x + 185, this.y - 105);
+        g.drawLine(this.x + 185, this.y - 105, this.x + 285, this.y - 105);
+        g.drawLine(this.x + 285, this.y - 105, this.x + 298, this.y - 80);
+        g.drawLine(this.x + 200, this.y - 105, this.x + 200, this.y - 140);
+        g.drawLine(this.x + 200, this.y - 140, this.x + 240, this.y - 140);
+        g.drawLine(this.x + 240, this.y - 105, this.x + 240, this.y - 140);
+        g.drawLine(this.x + 100, this.y - 40, this.x + 150, this.y - 80);
 
     }
 }
