@@ -1,4 +1,4 @@
-package ru.vsu.cs.util.cg_a_g.steblev_d_v;
+package ru.vsu.cs.util.cg_a_g.steblev_d_v.objects;
 
 import java.awt.*;
 
@@ -20,7 +20,7 @@ public class Ship {
         this.y = y;
     }
 
-    void drawShip(final Graphics gr){
+    public void drawShip(final Graphics gr){
         Graphics2D g = (Graphics2D) gr;
 
         // Нижняя часть корабля

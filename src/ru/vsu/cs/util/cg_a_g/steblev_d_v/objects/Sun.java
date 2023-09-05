@@ -1,4 +1,4 @@
-package ru.vsu.cs.util.cg_a_g.steblev_d_v;
+package ru.vsu.cs.util.cg_a_g.steblev_d_v.objects;
 
 import java.awt.*;
 
@@ -15,7 +15,7 @@ public class Sun {
         this.height = height;
     }
 
-    void drawSun(final Graphics gr) {
+    public void drawSun(final Graphics gr) {
         Graphics2D g = (Graphics2D) gr;
         g.setColor(new Color(244, 169, 0));
         g.fillOval(this.x, this.y, this.width, this.height);

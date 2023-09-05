@@ -1,4 +1,4 @@
-package ru.vsu.cs.util.cg_a_g.steblev_d_v;
+package ru.vsu.cs.util.cg_a_g.steblev_d_v.objects;
 
 import java.awt.*;
 
@@ -11,7 +11,7 @@ public class Cloud {
         this.y = y;
     }
 
-    void drawCloud(final Graphics gr) {
+    public void drawCloud(final Graphics gr) {
         Graphics2D g = (Graphics2D) gr;
         g.setColor(new Color(221, 210, 204));
         g.fillOval(this.x + 70, this.y, 80, 80);

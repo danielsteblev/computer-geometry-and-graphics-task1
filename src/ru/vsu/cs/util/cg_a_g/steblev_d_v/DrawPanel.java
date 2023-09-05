@@ -1,6 +1,8 @@
 package ru.vsu.cs.util.cg_a_g.steblev_d_v;
 
-import org.w3c.dom.Text;
+import ru.vsu.cs.util.cg_a_g.steblev_d_v.objects.Cloud;
+import ru.vsu.cs.util.cg_a_g.steblev_d_v.objects.Ship;
+import ru.vsu.cs.util.cg_a_g.steblev_d_v.objects.Sun;
 
 import javax.swing.*;
 import java.awt.*;
