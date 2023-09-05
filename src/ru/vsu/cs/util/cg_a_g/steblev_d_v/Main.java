@@ -17,6 +17,6 @@ public class Main {
         Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
         mainWindow.setLocation(dimension.width/2 - mainWindow.getSize().width/2,
                 dimension.height/2 - mainWindow.getSize().height/2);
-
+        System.out.println("Попытка запуска приложения...");
              }
 }
