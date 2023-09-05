@@ -70,6 +70,14 @@ public class DrawPanel extends JPanel implements ActionListener {
         g.setFont(new Font("Times", Font.BOLD|Font.ITALIC, 30));
         g.drawString("♪ *BIG BAND*", 300, 540);
 
+        Sun sun = new Sun(450, 15, 80, 80);
+        Cloud cloud = new Cloud(100, 10);
+        Cloud cloud2 = new Cloud(350, 40);
+
+        sun.drawSun(gr);
+        cloud.drawCloud(gr);
+        cloud2.drawCloud(gr);
+
 
     }
 
