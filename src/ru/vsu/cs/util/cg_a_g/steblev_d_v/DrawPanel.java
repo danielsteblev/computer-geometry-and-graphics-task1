@@ -14,15 +14,30 @@ public class DrawPanel extends JPanel implements ActionListener {
     private final int PANEL_HEIGHT;
     private final int TIMER_DELAY;
     private Timer timer;
-    private int ticksFromStart = 0;
+    private int ticksFromStart1 = 0;
+    private int ticksFromStart2 = 0;
+    private int ticksFromStart3 = 0;
     private Ship ship;
+
+    private Cloud cloud;
+
+    private Cloud cloud2;
+
     public DrawPanel(final int width, final int height, final int timerDelay) {
         this.PANEL_WIDTH = width;
         this.PANEL_HEIGHT = height;
         this.TIMER_DELAY = timerDelay;
         timer = new Timer(timerDelay, this);
         timer.start();
-        this.ship = new Ship(ticksFromStart, 255);
+        this.ship = new Ship(ticksFromStart1, 255);
+
+        this.cloud = new Cloud(ticksFromStart2, 30);
+
+        this.cloud2 = new Cloud(ticksFromStart3, 20);
+
+
+
+
 
 
 
@@ -61,8 +76,14 @@ public class DrawPanel extends JPanel implements ActionListener {
                 g.fillOval((k * 80 + 60), 545, 3, 3);
             }
         }
-        ship.setX(ticksFromStart);
+        ship.setX(ticksFromStart1);
         ship.drawShip(gr);
+
+        cloud.setX(ticksFromStart2 + 500);
+        cloud.drawCloud(gr);
+
+        cloud2.setX(ticksFromStart3 + 10);
+        cloud2.drawCloud(gr);
 
         // Текст
         g.setColor(Color.black);
@@ -87,7 +108,10 @@ public class DrawPanel extends JPanel implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == timer) {
             repaint();
-            ++ticksFromStart;
+            ++ticksFromStart1;
+            --ticksFromStart2;
+            ticksFromStart3 += 3;
+
         }
     }
 }

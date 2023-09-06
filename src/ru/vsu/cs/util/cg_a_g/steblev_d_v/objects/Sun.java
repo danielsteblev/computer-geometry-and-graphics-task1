@@ -8,6 +8,10 @@ public class Sun {
     private int width;
     private int height;
 
+    public void setX(int x) {
+        this.x = x;
+    }
+
     public Sun(int x, int y, int width, int height) {
         this.x = x;
         this.y = y;
@@ -19,6 +23,8 @@ public class Sun {
         Graphics2D g = (Graphics2D) gr;
         g.setColor(new Color(244, 169, 0));
         g.fillOval(this.x, this.y, this.width, this.height);
+
+        //Окантовка
         g.setColor(Color.black);
         g.drawOval(this.x, this.y, this.width, this.height);
 
