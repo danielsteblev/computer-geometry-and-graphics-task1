@@ -110,7 +110,7 @@ public class DrawPanel extends JPanel implements ActionListener {
             repaint();
             ++ticksFromStart1;
             --ticksFromStart2;
-            ticksFromStart3 += 3;
+            ticksFromStart3 += 2;
 
         }
     }
