@@ -1,9 +1,6 @@
 package ru.vsu.cs.util.cg_a_g.steblev_d_v;
 
-import ru.vsu.cs.util.cg_a_g.steblev_d_v.objects.Cloud;
-import ru.vsu.cs.util.cg_a_g.steblev_d_v.objects.Ship;
-import ru.vsu.cs.util.cg_a_g.steblev_d_v.objects.SmallShip;
-import ru.vsu.cs.util.cg_a_g.steblev_d_v.objects.Sun;
+import ru.vsu.cs.util.cg_a_g.steblev_d_v.objects.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -27,6 +24,8 @@ public class DrawPanel extends JPanel implements ActionListener {
     private SmallShip sh;
     private SmallShip sh2;
     private SmallShip sh3;
+    private RealityCloud cloudR;
+    private RealityCloud cloudR2;
 
     public DrawPanel(final int width, final int height, final int timerDelay) {
         this.PANEL_WIDTH = width;
@@ -44,6 +43,9 @@ public class DrawPanel extends JPanel implements ActionListener {
         this.cloud = new Cloud(ticksFromStart2, 30);
 
         this.cloud2 = new Cloud(ticksFromStart3, 20);
+
+        this.cloudR = new RealityCloud(40, 50);
+        this.cloudR2 = new RealityCloud(450, 30);
 
 
 
@@ -117,14 +119,21 @@ public class DrawPanel extends JPanel implements ActionListener {
         sh3.drawSmallShip(gr);
 
 
+
         ship.setX(ticksFromStart1);
         ship.drawShip(gr);
 
-        cloud.setX(ticksFromStart2 + 500);
-        cloud.drawCloud(gr);
+//        cloudR.setX(ticksFromStart2 + 500);
+        cloudR.drawRealityCloud(gr);
 
-        cloud2.setX(ticksFromStart3 + 10);
-        cloud2.drawCloud(gr);
+//        cloudR2.setX(ticksFromStart3 + 10);
+        cloudR2.drawRealityCloud(gr);
+
+//        cloud.setX(ticksFromStart2 + 500);
+//        cloud.drawCloud(gr);
+//
+//        cloud2.setX(ticksFromStart3 + 10);
+//        cloud2.drawCloud(gr);
 
         // Текст
         g.setColor(Color.black);
@@ -138,9 +147,9 @@ public class DrawPanel extends JPanel implements ActionListener {
         Cloud cloud = new Cloud(100, 10);
         Cloud cloud2 = new Cloud(350, 40);
 
-        sun.drawSun(gr);
-        cloud.drawCloud(gr);
-        cloud2.drawCloud(gr);
+//        sun.drawSun(gr);
+//        cloud.drawCloud(gr);
+//        cloud2.drawCloud(gr);
 
 
 
