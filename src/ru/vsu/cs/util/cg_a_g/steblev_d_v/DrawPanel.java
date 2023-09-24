@@ -26,6 +26,7 @@ public class DrawPanel extends JPanel implements ActionListener {
     private SmallShip sh3;
     private RealityCloud cloudR;
     private RealityCloud cloudR2;
+    private SmallShipV2 smallShipV2;
 
     public DrawPanel(final int width, final int height, final int timerDelay) {
         this.PANEL_WIDTH = width;
@@ -36,16 +37,20 @@ public class DrawPanel extends JPanel implements ActionListener {
 
         this.sh = new SmallShip(20, 250, new Color(214,130,70));
         this.sh2 = new SmallShip(120, 250, new Color(172,140,79));
-        this.sh3 = new SmallShip(650, 250, new Color(223,154,182));
+//        this.sh3 = new SmallShip(650, 250, new Color(223,154,182));
+        this.smallShipV2 = new SmallShipV2(650, 245, new Color(223,154,182));
 
-        this.ship = new Ship(ticksFromStart1, 255);
+
 
         this.cloud = new Cloud(ticksFromStart2, 30);
 
         this.cloud2 = new Cloud(ticksFromStart3, 20);
 
-        this.cloudR = new RealityCloud(40, 50);
-        this.cloudR2 = new RealityCloud(450, 30);
+        this.cloudR = new RealityCloud(40, 40);
+        this.cloudR2 = new RealityCloud(450, 15);
+
+        this.ship = new Ship(ticksFromStart1, 255);
+
 
 
 
@@ -69,15 +74,16 @@ public class DrawPanel extends JPanel implements ActionListener {
         g.fillRect(0, 0, 800, 260);
         g.setColor(new Color(1, 58, 145));
         g.fillRect(0, 260, 800, 210);
-        g.setColor(new Color(121, 64, 6));
+        g.setColor(new Color(138, 73, 8));
         g.fillRect(0, 450, 800, 130);
         g.setColor(Color.BLACK);
-        g.fillRect(0, 450, 800, 2);
+        g.drawLine(0, 450, 800, 450);
+//        g.fillRect(0, 450, 800, 2);
         g.fillRect(0, 260, 800, 2);
         for (int i = 0; i < 30; i++) {
             g.drawLine(i * 40 + 30, 450, (i - 5) * 100 + 35, 600);
         }
-        g.setColor(new Color(121, 64, 6));
+        g.setColor(new Color(138, 73, 8));
         for(int i = 0; i < 10; i++){
             g.fillRect((i + 1) * 80, 350, 20, 100);
         }
@@ -88,7 +94,7 @@ public class DrawPanel extends JPanel implements ActionListener {
         }
 
 
-        g.setColor(new Color(121, 64, 6));
+        g.setColor(new Color(138, 73, 8));
         g.fillRect(-1, 365, 1000, 20);
         g.fillRect(-1, 415, 1000, 20);
         g.setColor(Color.BLACK);
@@ -112,16 +118,10 @@ public class DrawPanel extends JPanel implements ActionListener {
         g.setFont(new Font("Times", Font.PLAIN, 35));
         g.drawString("☠\uFE0F", 632, 410);
 
-
-
+        smallShipV2.drawSmallShipV2(gr);
         sh.drawSmallShip(gr);
         sh2.drawSmallShip(gr);
-        sh3.drawSmallShip(gr);
 
-
-
-        ship.setX(ticksFromStart1);
-        ship.drawShip(gr);
 
 //        cloudR.setX(ticksFromStart2 + 500);
         cloudR.drawRealityCloud(gr);
@@ -129,6 +129,8 @@ public class DrawPanel extends JPanel implements ActionListener {
 //        cloudR2.setX(ticksFromStart3 + 10);
         cloudR2.drawRealityCloud(gr);
 
+        ship.setX(ticksFromStart1);
+        ship.drawShip(gr);
 //        cloud.setX(ticksFromStart2 + 500);
 //        cloud.drawCloud(gr);
 //

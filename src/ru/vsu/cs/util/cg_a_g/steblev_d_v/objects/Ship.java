@@ -27,21 +27,21 @@ public class Ship {
         g.setColor(new Color(147, 8, 3));
         g.fillRect(this.x, this.y, 302, 32);
         g.setColor(Color.BLACK);
-        g.fillRect(this.x, this.y, 354, 2);
+        g.fillRect(this.x, this.y, 350, 2);
         g.fillRect(this.x, this.y + 30, 302, 2);
         g.fillRect(this.x, this.y + 30, 304, 2);
         g.drawLine(this.x, this.y, this.x, this.y + 30);
         g.setColor(new Color(147, 8, 3));
-        g.fillPolygon(new int[] {this.x + 270, this.x + 352, this.x + 304}, new int[] {257, 257, 286}, 3);
+        g.fillPolygon(new int[] {this.x + 270, this.x + 350, this.x + 304}, new int[] {257, 257, 286}, 3);
         g.setColor(Color.BLACK);
-        g.drawLine(this.x + 303, 285, this.x + 353, 255);
+        g.drawLine(this.x + 303, 285, this.x + 348, 257);
 
         // Основа корабля
         g.setColor(new Color(220, 216, 213));
         g.fillRect(this.x, this.y - 40, 350, 40);
-        g.fillPolygon(new int[] {this.x + 200, this.x + 400, this.x + 355}, new int[] {200, 200, 255}, 3);
+        g.fillPolygon(new int[] {this.x + 200, this.x + 400, this.x + 350}, new int[] {200, 200, 255}, 3);
         g.setColor(Color.BLACK);
-        g.drawLine(this.x + 353, 256, this.x + 400, 200);
+        g.drawLine(this.x + 349, 256, this.x + 400, 200);
 
 
         g.setColor(new Color(199, 195, 201));
