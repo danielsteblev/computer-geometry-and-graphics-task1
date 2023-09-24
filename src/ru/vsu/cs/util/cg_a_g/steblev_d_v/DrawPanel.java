@@ -67,7 +67,7 @@ public class DrawPanel extends JPanel implements ActionListener {
         g.fillRect(0, 0, 800, 260);
         g.setColor(new Color(1, 58, 145));
         g.fillRect(0, 260, 800, 210);
-        g.setColor(new Color(141, 78, 9));
+        g.setColor(new Color(121, 64, 6));
         g.fillRect(0, 450, 800, 130);
         g.setColor(Color.BLACK);
         g.fillRect(0, 450, 800, 2);
@@ -75,7 +75,7 @@ public class DrawPanel extends JPanel implements ActionListener {
         for (int i = 0; i < 30; i++) {
             g.drawLine(i * 40 + 30, 450, (i - 5) * 100 + 35, 600);
         }
-        g.setColor(new Color(141, 78, 9));
+        g.setColor(new Color(121, 64, 6));
         for(int i = 0; i < 10; i++){
             g.fillRect((i + 1) * 80, 350, 20, 100);
         }
@@ -86,7 +86,7 @@ public class DrawPanel extends JPanel implements ActionListener {
         }
 
 
-        g.setColor(new Color(141, 78, 9));
+        g.setColor(new Color(121, 64, 6));
         g.fillRect(-1, 365, 1000, 20);
         g.fillRect(-1, 415, 1000, 20);
         g.setColor(Color.BLACK);
@@ -99,15 +99,16 @@ public class DrawPanel extends JPanel implements ActionListener {
             }
         }
 
-        g.setColor(new Color(244, 182, 109));
+        g.setColor(new Color(230, 176, 7));
         g.fillRect(625, 355, 50, 70);
         g.setColor(Color.black);
+        g.drawRect(630, 360, 40, 60);
         g.drawRect(625, 355, 50, 70);
-        g.setFont(new Font("Times", Font.BOLD|Font.ITALIC, 10));
-        g.drawString("DANGER", 630, 380);
-        g.drawString("ZONE", 633, 394);
-        g.setFont(new Font("Times", Font.BOLD|Font.ITALIC, 25));
-        g.drawString("☠\uFE0F", 633, 418);
+        g.setFont(new Font("Times", Font.BOLD, 8));
+        g.drawString("DANGER", 632, 380);
+//        g.drawString("ZONE", 633, 394);
+        g.setFont(new Font("Times", Font.PLAIN, 35));
+        g.drawString("☠\uFE0F", 632, 410);
 
 
 
