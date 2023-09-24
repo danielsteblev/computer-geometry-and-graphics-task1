@@ -27,23 +27,68 @@ public class Ship {
         g.setColor(new Color(147, 8, 3));
         g.fillRect(this.x, this.y, 302, 32);
         g.setColor(Color.BLACK);
-        g.fillRect(this.x, this.y, 350, 2);
+        g.fillRect(this.x, this.y, 354, 2);
         g.fillRect(this.x, this.y + 30, 302, 2);
-        g.fillRect(this.x, this.y + 30, 300, 2);
+        g.fillRect(this.x, this.y + 30, 304, 2);
         g.drawLine(this.x, this.y, this.x, this.y + 30);
         g.setColor(new Color(147, 8, 3));
         g.fillPolygon(new int[] {this.x + 270, this.x + 352, this.x + 304}, new int[] {257, 257, 286}, 3);
         g.setColor(Color.BLACK);
-        g.drawLine(this.x + 303, 285, this.x + 351, 255);
+        g.drawLine(this.x + 303, 285, this.x + 353, 255);
 
         // Основа корабля
         g.setColor(new Color(220, 216, 213));
-        g.fillRect(this.x, this.y - 55, 350, 55);
-        g.fillPolygon(new int[] {this.x, this.x + 400, this.x + 355}, new int[] {200, 200, 255}, 3);
+        g.fillRect(this.x, this.y - 40, 350, 40);
+        g.fillPolygon(new int[] {this.x + 200, this.x + 400, this.x + 355}, new int[] {200, 200, 255}, 3);
         g.setColor(Color.BLACK);
-        g.drawLine(this.x + 352, 255, this.x + 402, 200);
-        g.setColor(new Color(41, 166, 225));
-        g.fillRect(this.x, this.y - 55, 120, 15);
+        g.drawLine(this.x + 353, 256, this.x + 400, 200);
+
+
+        g.setColor(new Color(199, 195, 201));
+        g.fillRect(this.x + 9, this.y - 12, 16, 7);
+        g.setColor(Color.black);
+        g.drawRect(this.x + 9, this.y - 12, 16, 7);
+
+        g.setColor(new Color(199, 195, 201));
+        g.fillRect(this.x + 39, this.y - 12, 16, 7);
+        g.setColor(Color.black);
+        g.drawRect(this.x + 39, this.y - 12, 16, 7);
+
+        g.setColor(new Color(199, 195, 201));
+        g.fillOval(this.x + 89, this.y - 12, 7, 7);
+        g.setColor(Color.black);
+        g.drawOval(this.x + 89, this.y - 12, 7, 7);
+
+
+
+        g.setColor(new Color(199, 195, 201));
+        g.drawOval(this.x + 129, this.y - 12, 7, 7);
+        g.setColor(Color.black);
+        g.drawOval(this.x + 189, this.y - 12, 7, 7);
+
+
+        g.setColor(new Color(199, 195, 201));
+        g.fillOval(this.x + 129, this.y - 12, 7, 7);
+        g.setColor(Color.black);
+        g.drawOval(this.x + 230, this.y - 12, 7, 7);
+
+        g.setColor(new Color(199, 195, 201));
+        g.fillOval(this.x + 129, this.y - 12, 7, 7);
+        g.setColor(Color.black);
+        g.drawOval(this.x + 240, this.y - 12, 7, 7);
+
+
+        g.setColor(new Color(199, 195, 201));
+        g.fillOval(this.x + 129, this.y - 12, 7, 7);
+        g.setColor(Color.black);
+        g.drawOval(this.x + 290, this.y - 12, 7, 7);
+
+        g.setColor(new Color(199, 195, 201));
+        g.fillOval(this.x + 129, this.y - 12, 7, 7);
+        g.setColor(Color.black);
+        g.drawOval(this.x + 297, this.y - 12, 7, 7);
+
+
 
         // Кабина
         g.setColor(new Color(220, 216, 213));
@@ -57,6 +102,10 @@ public class Ship {
         g.fillPolygon(new int[] {this.x + 165, this.x + 185, this.x + 185}, new int[] {this.y - 75, this.y - 75, this.y - 105}, 3);
         g.fillPolygon(new int[] {this.x + 300, this.x + 285, this.x + 285}, new int[] {this.y - 75, this.y - 75, this.y - 105}, 3);
         g.fillRect(this.x + 200, this.y - 140, 40, 35);
+        g.setColor(new Color(150, 145, 149));
+        g.fillPolygon(new int[] {this.x + 340, this.x + 310, this.x + 310}, new int[] {this.y - 55, this.y - 55, this.y - 80}, 3);
+        g.setColor(Color.black);
+        g.drawPolygon(new int[] {this.x + 340, this.x + 310, this.x + 310}, new int[] {this.y - 55, this.y - 55, this.y - 80}, 3);
 
         // Спасательный круг
         g.setColor(new Color(225, 77, 0));
@@ -67,7 +116,12 @@ public class Ship {
         g.drawLine(this.x + 130, this.y - 30, this.x + 170, this.y - 30);
         g.drawLine(this.x + 150, this.y + - 50, this.x + 150, this.y + - 11);
 
+        g.setColor(new Color(150, 145, 149));
+        g.fillRect(this.x + 160, this.y - 77, 138, 17);
+        g.setColor(Color.black);
+        g.drawRect(this.x + 160, this.y - 77, 138, 17);
 
+        g.drawRect(this.x + 290, 200, 20, 10);
         // Окна
         g.setColor(new Color(66, 171, 219));
         for (int i = 0; i < 4; i++) {
@@ -86,6 +140,12 @@ public class Ship {
             g.drawLine(this.x + i * 10, this.y - 55, this.x + i * 10, this.y - 40);
 
         }
+
+        for (int i = 0; i < 10; i++) {
+            g.drawLine((this.x + 310)+ i * 8, this.y - 55, (this.x + 310) + i * 8, this.y - 65);
+
+        }
+        g.drawLine(this.x + 310, this.y - 65, this.x + 382, this.y - 65);
         g.drawLine(this.x, this.y - 40, this.x + 120, this.y - 40 );
         g.drawLine(this.x + 120, this.y - 40, this.x + 120, this.y - 55);
         g.drawLine(this.x + 120, this.y - 55, this.x + 400, this.y - 55);

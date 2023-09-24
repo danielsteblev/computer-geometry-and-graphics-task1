@@ -28,7 +28,7 @@ public class Cloud {
         g.drawOval(this.x + 130, this.y, 80, 80);
         g.drawOval(this.x + 190, this.y, 80, 80);
         g.setColor(new Color(221, 210, 204));
-        g.fillRect(this.x + 130, this.y + 15, 130, 50);
+        g.fillRect(this.x + 130, this.y + 14, 131, 52);
 
 
 
