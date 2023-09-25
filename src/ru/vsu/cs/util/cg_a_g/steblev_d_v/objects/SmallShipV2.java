@@ -34,6 +34,6 @@ public class SmallShipV2 {
         g.drawLine(this.x + 25, this.y, this.x + 25, this.y - 55);
 
         g.setColor(color);
-        g.fillRect(this.x, this.y, 41, 14);
+        g.fillRect(this.x - 1, this.y, 43, 14);
     }
 }

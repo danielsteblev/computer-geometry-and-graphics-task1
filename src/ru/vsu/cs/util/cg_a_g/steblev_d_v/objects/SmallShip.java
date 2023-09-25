@@ -1,6 +1,7 @@
 package ru.vsu.cs.util.cg_a_g.steblev_d_v.objects;
 
 import java.awt.*;
+import java.util.Random;
 
 public class SmallShip {
     private int x;
@@ -42,7 +43,6 @@ public class SmallShip {
         // Окантовка парусов
         g.setColor(Color.BLACK);
         g.drawPolygon(new int[] {this.x + 50, this.x - 10, this.x + 40}, new int[] {this.y - 90, this.y - 10, this.y - 5}, 3);
-
 
 
 

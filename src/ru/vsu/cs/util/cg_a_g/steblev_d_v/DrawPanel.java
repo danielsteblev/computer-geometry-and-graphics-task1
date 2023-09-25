@@ -6,27 +6,28 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Random;
 
 public class DrawPanel extends JPanel implements ActionListener {
     private final int PANEL_WIDTH;
     private final int PANEL_HEIGHT;
     private final int TIMER_DELAY;
-    private Timer timer;
+    private final Timer timer;
     private int ticksFromStart1 = 0;
     private int ticksFromStart2 = 0;
     private int ticksFromStart3 = 0;
-    private Ship ship;
+    private final Ship ship;
 
-    private Cloud cloud;
+    private final Cloud cloud;
 
-    private Cloud cloud2;
+    private final Cloud cloud2;
 
-    private SmallShip sh;
-    private SmallShip sh2;
+    private final SmallShip sh;
+    private final SmallShip sh2;
     private SmallShip sh3;
-    private RealityCloud cloudR;
-    private RealityCloud cloudR2;
-    private SmallShipV2 smallShipV2;
+    private final RealityCloud cloudR;
+    private final RealityCloud cloudR2;
+    private final SmallShipV2 smallShipV2;
 
     public DrawPanel(final int width, final int height, final int timerDelay) {
         this.PANEL_WIDTH = width;
@@ -34,34 +35,17 @@ public class DrawPanel extends JPanel implements ActionListener {
         this.TIMER_DELAY = timerDelay;
         timer = new Timer(timerDelay, this);
         timer.start();
-
+        Random random = new Random();
+        random.nextDouble(1, 350);
         this.sh = new SmallShip(20, 250, new Color(214,130,70));
         this.sh2 = new SmallShip(120, 250, new Color(172,140,79));
 //        this.sh3 = new SmallShip(650, 250, new Color(223,154,182));
         this.smallShipV2 = new SmallShipV2(650, 245, new Color(223,154,182));
-
-
-
         this.cloud = new Cloud(ticksFromStart2, 30);
-
         this.cloud2 = new Cloud(ticksFromStart3, 20);
-
         this.cloudR = new RealityCloud(40, 40);
         this.cloudR2 = new RealityCloud(450, 15);
-
         this.ship = new Ship(ticksFromStart1, 255);
-
-
-
-
-
-
-
-
-
-
-
-
     }
 
     @Override
@@ -92,8 +76,6 @@ public class DrawPanel extends JPanel implements ActionListener {
             g.setColor(Color.black);
             g.drawRect((i + 1) * 80, 350, 20, 100);
         }
-
-
         g.setColor(new Color(138, 73, 8));
         g.fillRect(-1, 365, 1000, 20);
         g.fillRect(-1, 415, 1000, 20);
@@ -106,7 +88,6 @@ public class DrawPanel extends JPanel implements ActionListener {
                 g.fillOval((k * 80 + 60), 545, 3, 3);
             }
         }
-
         g.setColor(new Color(230, 176, 7));
         g.fillRect(625, 355, 50, 70);
         g.setColor(Color.black);
@@ -117,18 +98,13 @@ public class DrawPanel extends JPanel implements ActionListener {
 //        g.drawString("ZONE", 633, 394);
         g.setFont(new Font("Times", Font.PLAIN, 35));
         g.drawString("☠\uFE0F", 632, 410);
-
         smallShipV2.drawSmallShipV2(gr);
         sh.drawSmallShip(gr);
         sh2.drawSmallShip(gr);
-
-
 //        cloudR.setX(ticksFromStart2 + 500);
         cloudR.drawRealityCloud(gr);
-
 //        cloudR2.setX(ticksFromStart3 + 10);
         cloudR2.drawRealityCloud(gr);
-
         ship.setX(ticksFromStart1);
         ship.drawShip(gr);
 //        cloud.setX(ticksFromStart2 + 500);
