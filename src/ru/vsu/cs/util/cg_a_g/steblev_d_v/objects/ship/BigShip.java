@@ -50,46 +50,46 @@ public class BigShip extends Ship {
         g.drawLine(this.x + 349, 256, this.x + 400, 200);
 
 
-        g.setColor(new Color(199, 195, 201));
+        g.setColor(new Color(220, 216, 213));
         g.fillRect(this.x + 9, this.y - 12, 16, 7);
         g.setColor(Color.black);
         g.drawRect(this.x + 9, this.y - 12, 16, 7);
 
-        g.setColor(new Color(199, 195, 201));
+        g.setColor(new Color(220, 216, 213));
         g.fillRect(this.x + 39, this.y - 12, 16, 7);
         g.setColor(Color.black);
         g.drawRect(this.x + 39, this.y - 12, 16, 7);
 
-        g.setColor(new Color(199, 195, 201));
+        g.setColor(new Color(220, 216, 213));
         g.fillOval(this.x + 89, this.y - 12, 7, 7);
         g.setColor(Color.black);
         g.drawOval(this.x + 89, this.y - 12, 7, 7);
 
 
 
-        g.setColor(new Color(199, 195, 201));
+        g.setColor(new Color(220, 216, 213));
         g.drawOval(this.x + 129, this.y - 12, 7, 7);
         g.setColor(Color.black);
         g.drawOval(this.x + 189, this.y - 12, 7, 7);
 
 
-        g.setColor(new Color(199, 195, 201));
+        g.setColor(new Color(220, 216, 213));
         g.fillOval(this.x + 129, this.y - 12, 7, 7);
         g.setColor(Color.black);
         g.drawOval(this.x + 230, this.y - 12, 7, 7);
 
-        g.setColor(new Color(199, 195, 201));
+        g.setColor(new Color(220, 216, 213));
         g.fillOval(this.x + 129, this.y - 12, 7, 7);
         g.setColor(Color.black);
         g.drawOval(this.x + 240, this.y - 12, 7, 7);
 
 
-        g.setColor(new Color(199, 195, 201));
+        g.setColor(new Color(220, 216, 213));
         g.fillOval(this.x + 129, this.y - 12, 7, 7);
         g.setColor(Color.black);
         g.drawOval(this.x + 290, this.y - 12, 7, 7);
 
-        g.setColor(new Color(199, 195, 201));
+        g.setColor(new Color(220, 216, 213));
         g.fillOval(this.x + 129, this.y - 12, 7, 7);
         g.setColor(Color.black);
         g.drawOval(this.x + 297, this.y - 12, 7, 7);
