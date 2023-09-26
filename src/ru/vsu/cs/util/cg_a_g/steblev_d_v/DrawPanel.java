@@ -11,6 +11,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Random;
 
 public class DrawPanel extends JPanel implements ActionListener {
     private final Timer timer;
@@ -29,6 +30,9 @@ public class DrawPanel extends JPanel implements ActionListener {
     private final Cloud cloud6;
 
     private final Title title;
+    private final Lifebuoy lifebuoy1;
+    private final Lifebuoy lifebuoy2;
+
 
 
     public DrawPanel(final int width, final int height, final int timerDelay) {
@@ -49,6 +53,8 @@ public class DrawPanel extends JPanel implements ActionListener {
         this.bigShip = new BigShip(ticksFromStart1, 255);
 
         this.pier = new Pier(new Fence(new Poster(GetRandom.getRandom(1, 700))));
+        this.lifebuoy1 = new Lifebuoy(GetRandom.getRandom(1, 100), 185, 2);
+        this.lifebuoy2 = new Lifebuoy(GetRandom.getRandom(200, 300), 185, 2);
 
 
     }
@@ -94,6 +100,9 @@ public class DrawPanel extends JPanel implements ActionListener {
 
         pier.drawPier(gr);
         title.printTittle(gr);
+
+        lifebuoy1.drawLifebuoy(gr);
+        lifebuoy2.drawLifebuoy(gr);
 
     }
 
