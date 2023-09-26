@@ -34,7 +34,7 @@ public class DrawPanel extends JPanel implements ActionListener {
         this.smallShipV2 = new SmallShipV2(GetRandom.getRandom(530, 700), 245, new Color(223, 154, 182));
         this.bigShip = new BigShip(ticksFromStart1, 255);
 
-        this.pier = new Pier(new Fence(new Poster(625)));
+        this.pier = new Pier(new Fence(new Poster(GetRandom.getRandom(1, 700))));
 
     }
 
