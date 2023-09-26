@@ -1,5 +1,6 @@
 package ru.vsu.cs.util.cg_a_g.steblev_d_v.objects.ship;
 
+import ru.vsu.cs.util.cg_a_g.steblev_d_v.objects.Lifebuoy;
 import ru.vsu.cs.util.cg_a_g.steblev_d_v.objects.ship.Ship;
 
 import java.awt.*;
@@ -9,9 +10,12 @@ public class BigShip extends Ship {
     private int x;
     private int y;
 
-    public BigShip(final int x, final int y) {
+    private Lifebuoy lifebuoy;
+
+    public BigShip(final int x, final int y, Lifebuoy lifebuoy) {
         this.x = x;
         this.y = y;
+        this.lifebuoy = lifebuoy;
     }
     @Override
     public void setX(int x) {
@@ -109,21 +113,7 @@ public class BigShip extends Ship {
         g.setColor(Color.black);
         g.drawPolygon(new int[] {this.x + 340, this.x + 310, this.x + 310}, new int[] {this.y - 55, this.y - 55, this.y - 80}, 3);
 
-        // Спасательный круг
-        g.setColor(new Color(225, 77, 0));
-        g.fillOval(this.x + 130, this.y - 50, 40, 40);
-        g.setColor(new Color(220, 216, 213));
-        g.fillOval(this.x + 137, this.y - 43, 25, 25);
-        g.setColor(Color.BLACK);
-        g.drawLine(this.x + 130, this.y - 30, this.x + 170, this.y - 30);
-        g.drawLine(this.x + 150, this.y + - 50, this.x + 150, this.y + - 11);
 
-        g.setColor(new Color(150, 145, 149));
-        g.fillRect(this.x + 160, this.y - 77, 138, 17);
-        g.setColor(Color.black);
-        g.drawRect(this.x + 160, this.y - 77, 138, 17);
-
-        g.drawRect(this.x + 290, 200, 20, 10);
         // Окна
         g.setColor(new Color(66, 171, 219));
         for (int i = 0; i < 4; i++) {
@@ -163,9 +153,10 @@ public class BigShip extends Ship {
         g.drawLine(this.x + 200, this.y - 130, this.x + 240, this.y - 130);
         g.drawLine(this.x + 240, this.y - 105, this.x + 240, this.y - 140);
         g.drawLine(this.x + 100, this.y - 40, this.x + 150, this.y - 80);
-        g.drawOval(this.x + 130, this.y - 50, 40, 40);
-        g.drawOval(this.x + 137, this.y - 43, 25, 25);
 
+
+        lifebuoy.drawLifebuoy(g);
     }
+
 }
 

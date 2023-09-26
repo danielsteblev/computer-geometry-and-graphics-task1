@@ -13,6 +13,14 @@ public class Lifebuoy {
         this.kSize = kSize;
     }
 
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+
     public void drawLifebuoy(Graphics gr) {
         Graphics2D g = (Graphics2D) gr;
 
@@ -30,6 +38,6 @@ public class Lifebuoy {
         g.drawLine((this.x - 6 + 30) * kSize, (this.y - 6 + 21) * kSize, (this.x - 6 + 12 + 20 + 10) * kSize ,(this.y - 6 + 21) * kSize);
         g.drawLine((this.x - 6 + 21) * kSize, (this.y - 6) * kSize, (this.x - 6 + 21) * kSize,(this.y - 6 + 12) * kSize);
         g.drawLine((this.x - 6 + 21) * kSize, (this.y - 6 + 30) * kSize, (this.x - 6 + 21) * kSize ,(this.y - 6 + 12 + 20 + 10) * kSize);
-
+        g.setStroke(new BasicStroke(1));
     }
 }
