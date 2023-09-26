@@ -13,7 +13,8 @@ public class SmallShipV2 extends Ship {
         this.color = color;
     }
 
-    public void drawSmallShipV2(final Graphics gr) {
+    @Override
+    public void drawShip(final Graphics gr) {
         Graphics2D g = (Graphics2D) gr;
         g.setColor(color);
         g.fillRect(this.x, this.y, 40, 15);

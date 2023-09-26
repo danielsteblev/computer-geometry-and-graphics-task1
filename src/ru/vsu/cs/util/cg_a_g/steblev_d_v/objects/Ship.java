@@ -2,9 +2,20 @@ package ru.vsu.cs.util.cg_a_g.steblev_d_v.objects;
 
 import java.awt.*;
 
-public abstract class  Ship {
+public abstract class Ship {
 
-    public void drawShip(Graphics2D gr) {
+    private int x;
+    private int y;
 
+    public void setY(int y) {
+        this.y = y;
+    }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public void drawShip(Graphics gr) {
+        // toDO
     }
 }

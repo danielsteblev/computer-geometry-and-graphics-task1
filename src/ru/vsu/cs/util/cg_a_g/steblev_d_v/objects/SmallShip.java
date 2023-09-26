@@ -16,7 +16,8 @@ public class SmallShip extends Ship {
     }
 
 
-    public void drawSmallShip(final Graphics gr) {
+    @Override
+    public void drawShip(final Graphics gr) {
         Graphics2D g = (Graphics2D) gr;
         g.setColor(color);
 
