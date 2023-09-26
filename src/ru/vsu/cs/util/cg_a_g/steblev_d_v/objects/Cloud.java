@@ -26,6 +26,7 @@ public class Cloud {
     public void drawCloud(final Graphics gr) {
         Graphics2D g = (Graphics2D) gr;
         g.setColor(new Color(229, 227, 226));
+
         g.fillRect(this.x, this.y, 40 * kSize, 15 * kSize);
         g.fillOval(this.x - kSize * 5, this.y - kSize * 4, kSize * 15, kSize * 15);
         g.fillOval(this.x - kSize * 10, this.y + kSize * 4, kSize * 13, kSize * 13);

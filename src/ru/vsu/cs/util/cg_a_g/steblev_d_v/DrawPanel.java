@@ -1,6 +1,10 @@
 package ru.vsu.cs.util.cg_a_g.steblev_d_v;
 
 import ru.vsu.cs.util.cg_a_g.steblev_d_v.objects.*;
+import ru.vsu.cs.util.cg_a_g.steblev_d_v.objects.ship.BigShip;
+import ru.vsu.cs.util.cg_a_g.steblev_d_v.objects.ship.Ship;
+import ru.vsu.cs.util.cg_a_g.steblev_d_v.objects.ship.SmallShip;
+import ru.vsu.cs.util.cg_a_g.steblev_d_v.objects.ship.SmallShipV2;
 import ru.vsu.cs.util.cg_a_g.steblev_d_v.utils.GetRandom;
 
 import javax.swing.*;
@@ -26,6 +30,7 @@ public class DrawPanel extends JPanel implements ActionListener {
 
     private final Title title;
 
+
     public DrawPanel(final int width, final int height, final int timerDelay) {
         this.title = new Title(291, 540, "♪ *BIG BAND*");
         timer = new Timer(timerDelay, this);
@@ -44,6 +49,7 @@ public class DrawPanel extends JPanel implements ActionListener {
         this.bigShip = new BigShip(ticksFromStart1, 255);
 
         this.pier = new Pier(new Fence(new Poster(GetRandom.getRandom(1, 700))));
+
 
     }
 
@@ -88,6 +94,7 @@ public class DrawPanel extends JPanel implements ActionListener {
 
         pier.drawPier(gr);
         title.printTittle(gr);
+
     }
 
     @Override
