@@ -7,9 +7,12 @@ public class Title {
     private int x;
     private int y;
 
-    public Title(int x, int y) {
+    private String title;
+
+    public Title(int x, int y, String title) {
         this.x = x;
         this.y = y;
+        this.title = title;
     }
 
     public void printTittle(Graphics g) {
@@ -18,11 +21,12 @@ public class Title {
         // Тень
         g.setColor(Color.black);
         g.setFont(new Font("Times", Font.BOLD|Font.ITALIC, 33));
-        g.drawString("♪ *BIG BAND*", x, y);
+        g.drawString(title, x, y);
+        // ♪ *BIG BAND*
 
         // Текст
         g.setColor(Color.WHITE);
         g.setFont(new Font("Times", Font.BOLD|Font.ITALIC, 30));
-        g.drawString("♪ *BIG BAND*", x + 9, y);
+        g.drawString(title, x + 9, y);
     }
 }

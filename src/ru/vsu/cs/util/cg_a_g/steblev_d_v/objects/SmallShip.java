@@ -25,9 +25,6 @@ public class SmallShip extends Ship {
         g.fillRect(this.x, this.y, 70,  10);
         g.fillRect(this.x + 30, this.y - 5 , 25, 5);
 
-
-
-
         // Окантовка
         g.setColor(Color.black);
         g.drawRect(this.x, this.y, 70, 10);
@@ -36,7 +33,6 @@ public class SmallShip extends Ship {
         // Мачта
         g.drawLine(this.x + 50, this.y, this.x + 50, this.y - 90);
 
-
         // Паруса
         g.setColor(Color.white);
         g.fillPolygon(new int[] {this.x + 50, this.x - 10, this.x + 40}, new int[] {this.y - 90, this.y - 10, this.y - 5}, 3);
@@ -44,8 +40,5 @@ public class SmallShip extends Ship {
         // Окантовка парусов
         g.setColor(Color.BLACK);
         g.drawPolygon(new int[] {this.x + 50, this.x - 10, this.x + 40}, new int[] {this.y - 90, this.y - 10, this.y - 5}, 3);
-
-
-
     }
 }

@@ -16,25 +16,23 @@ public class SmallShipV2 extends Ship {
     @Override
     public void drawShip(final Graphics gr) {
         Graphics2D g = (Graphics2D) gr;
+
+
+        // Основа
         g.setColor(color);
-        g.fillRect(this.x, this.y, 40, 15);
-        g.fillRect(this.x + 10, this.y - 5, 30, 10);
-        g.fillPolygon(new int[] {this.x + 40, this.x + 40 , this.x + 60}, new int[] {this.y, this.y + 15, this.y}, 3 );
-        g.fillPolygon(new int[] {this.x, this.x , this.x - 20}, new int[] {this.y, this.y + 15, this.y}, 3 );
-        g.setColor(color.black);
-        g.drawRect(this.x, this.y, 40, 15);
-        g.drawPolygon(new int[] {this.x + 40, this.x + 40 , this.x + 60}, new int[] {this.y, this.y + 15, this.y}, 3 );
-        g.drawPolygon(new int[] {this.x, this.x , this.x - 20}, new int[] {this.y, this.y + 15, this.y}, 3 );
-        g.drawRect(this.x + 10, this.y - 5, 30, 10);
+        g.fillRect(this.x + 24, this.y - 7, 36, 7);
+        g.fillPolygon(new int[]{this.x, this.x + 80, this.x + 60, this.x + 20}, new int[] {this.y, this.y, this.y + 15, this.y + 15}, 4);
+        g.setColor(Color.black);
+        g.drawRect(this.x + 24, this.y - 7, 36, 7);
+        g.drawPolygon(new int[]{this.x, this.x + 80, this.x + 60, this.x + 20}, new int[] {this.y, this.y, this.y + 15, this.y + 15}, 4);
 
 
+        // Паруса
         g.setColor(Color.white);
-        g.fillPolygon(new int[] {this.x + 25, this.x + 15 , this.x + 60}, new int[] {this.y - 55, this.y - 5, this.y - 13}, 3 );
+        g.fillPolygon(new int[] {this.x + 45, this.x + 34 , this.x + 80}, new int[] {this.y - 67, this.y - 8, this.y - 12}, 3 );
         g.setColor(color.black);
-        g.drawPolygon(new int[] {this.x + 25, this.x + 15 , this.x + 60}, new int[] {this.y - 55, this.y - 5, this.y - 13}, 3 );
-        g.drawLine(this.x + 25, this.y, this.x + 25, this.y - 55);
+        g.drawPolygon(new int[] {this.x + 45, this.x + 34 , this.x + 80}, new int[] {this.y - 67, this.y - 8, this.y - 12}, 3 );
+        g.drawLine(this.x + 45, this.y, this.x + 45, this.y - 65);
 
-        g.setColor(color);
-        g.fillRect(this.x - 1, this.y, 43, 14);
     }
 }
