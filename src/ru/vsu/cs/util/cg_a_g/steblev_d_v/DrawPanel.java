@@ -16,7 +16,7 @@ public class DrawPanel extends JPanel implements ActionListener {
     private int ticksFromStart1 = 0;
     private int ticksFromStart2 = 0;
     private int ticksFromStart3 = 0;
-    private final Ship ship;
+    private final BigShip ship;
 
     private final Cloud cloud;
 
@@ -28,6 +28,8 @@ public class DrawPanel extends JPanel implements ActionListener {
     private final RealityCloud cloudR;
     private final RealityCloud cloudR2;
     private final SmallShipV2 smallShipV2;
+
+    private Fence fence;
 
     public DrawPanel(final int width, final int height, final int timerDelay) {
         this.PANEL_WIDTH = width;
@@ -45,7 +47,8 @@ public class DrawPanel extends JPanel implements ActionListener {
         this.cloud2 = new Cloud(ticksFromStart3, 20);
         this.cloudR = new RealityCloud(40, 40);
         this.cloudR2 = new RealityCloud(450, 15);
-        this.ship = new Ship(ticksFromStart1, 255);
+        this.ship = new BigShip(ticksFromStart1, 255);
+        this.fence = new Fence();
     }
 
     @Override
@@ -58,46 +61,47 @@ public class DrawPanel extends JPanel implements ActionListener {
         g.fillRect(0, 0, 800, 260);
         g.setColor(new Color(1, 58, 145));
         g.fillRect(0, 260, 800, 210);
-        g.setColor(new Color(138, 73, 8));
-        g.fillRect(0, 450, 800, 130);
-        g.setColor(Color.BLACK);
-        g.drawLine(0, 450, 800, 450);
-//        g.fillRect(0, 450, 800, 2);
-        g.fillRect(0, 260, 800, 2);
-        for (int i = 0; i < 30; i++) {
-            g.drawLine(i * 40 + 30, 450, (i - 5) * 100 + 35, 600);
-        }
-        g.setColor(new Color(138, 73, 8));
-        for(int i = 0; i < 10; i++){
-            g.fillRect((i + 1) * 80, 350, 20, 100);
-        }
+//        g.setColor(new Color(138, 73, 8));
+//        g.fillRect(0, 450, 800, 130);
+//        g.setColor(Color.BLACK);
+//        g.drawLine(0, 450, 800, 450);
+////        g.fillRect(0, 450, 800, 2);
+//        g.fillRect(0, 260, 800, 2);
+//        for (int i = 0; i < 30; i++) {
+//            g.drawLine(i * 40 + 30, 450, (i - 5) * 100 + 35, 600);
+//        }
+//        g.setColor(new Color(138, 73, 8));
+//        for(int i = 0; i < 10; i++){
+//            g.fillRect((i + 1) * 80, 350, 20, 100);
+//        }
+//
+//        for(int i = 0; i < 10; i++){
+//            g.setColor(Color.black);
+//            g.drawRect((i + 1) * 80, 350, 20, 100);
+//        }
+//        g.setColor(new Color(138, 73, 8));
+//        g.fillRect(-1, 365, 1000, 20);
+//        g.fillRect(-1, 415, 1000, 20);
+//        g.setColor(Color.BLACK);
+//        g.drawRect(-1,365, 1000, 20);
+//        g.drawRect(-1,415, 1000, 20);
+//        for (int j = 0; j < 18; j++) {
+//            for (int k = 0; k < 10; k++) {
+//                g.fillOval((j * 45 + 50), 460, 3, 3);
+//                g.fillOval((k * 80 + 60), 545, 3, 3);
+//            }
+//        }
+//        g.setColor(new Color(230, 176, 7));
+//        g.fillRect(625, 355, 50, 70);
+//        g.setColor(Color.black);
+//        g.drawRect(630, 360, 40, 60);
+//        g.drawRect(625, 355, 50, 70);
+//        g.setFont(new Font("Times", Font.BOLD, 8));
+//        g.drawString("DANGER", 632, 380);
+////        g.drawString("ZONE", 633, 394);
+//        g.setFont(new Font("Times", Font.PLAIN, 35));
+//        g.drawString("☠\uFE0F", 632, 410);
 
-        for(int i = 0; i < 10; i++){
-            g.setColor(Color.black);
-            g.drawRect((i + 1) * 80, 350, 20, 100);
-        }
-        g.setColor(new Color(138, 73, 8));
-        g.fillRect(-1, 365, 1000, 20);
-        g.fillRect(-1, 415, 1000, 20);
-        g.setColor(Color.BLACK);
-        g.drawRect(-1,365, 1000, 20);
-        g.drawRect(-1,415, 1000, 20);
-        for (int j = 0; j < 18; j++) {
-            for (int k = 0; k < 10; k++) {
-                g.fillOval((j * 45 + 50), 460, 3, 3);
-                g.fillOval((k * 80 + 60), 545, 3, 3);
-            }
-        }
-        g.setColor(new Color(230, 176, 7));
-        g.fillRect(625, 355, 50, 70);
-        g.setColor(Color.black);
-        g.drawRect(630, 360, 40, 60);
-        g.drawRect(625, 355, 50, 70);
-        g.setFont(new Font("Times", Font.BOLD, 8));
-        g.drawString("DANGER", 632, 380);
-//        g.drawString("ZONE", 633, 394);
-        g.setFont(new Font("Times", Font.PLAIN, 35));
-        g.drawString("☠\uFE0F", 632, 410);
         smallShipV2.drawSmallShipV2(gr);
         sh.drawSmallShip(gr);
         sh2.drawSmallShip(gr);
@@ -107,6 +111,7 @@ public class DrawPanel extends JPanel implements ActionListener {
         cloudR2.drawRealityCloud(gr);
         ship.setX(ticksFromStart1);
         ship.drawShip(gr);
+        fence.drawFence(gr);
 //        cloud.setX(ticksFromStart2 + 500);
 //        cloud.drawCloud(gr);
 //

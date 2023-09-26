@@ -2,7 +2,7 @@ package ru.vsu.cs.util.cg_a_g.steblev_d_v.objects;
 
 import java.awt.*;
 
-public class SmallShipV2 {
+public class SmallShipV2 extends Ship {
     private int x;
     private int y;
     private Color color;
