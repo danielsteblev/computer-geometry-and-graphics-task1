@@ -7,7 +7,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Random;
 
 public class DrawPanel extends JPanel implements ActionListener {
     private final Timer timer;
@@ -17,8 +16,14 @@ public class DrawPanel extends JPanel implements ActionListener {
     private Ship sh = null;
     private final Ship sh2;
     private final Ship smallShipV2;
-    private final Cloud cloudR;
-    private final Cloud cloudR2;
+
+    private final Cloud cloud1;
+    private final Cloud cloud2;
+    private final Cloud cloud3;
+    private final Cloud cloud4;
+    private final Cloud cloud5;
+    private final Cloud cloud6;
+
     private final Title title;
 
     public DrawPanel(final int width, final int height, final int timerDelay) {
@@ -26,8 +31,12 @@ public class DrawPanel extends JPanel implements ActionListener {
         timer = new Timer(timerDelay, this);
         timer.start();
 
-        this.cloudR = new Cloud(40, 40);
-        this.cloudR2 = new Cloud(450, 15);
+        this.cloud1 = new Cloud(40, 40, 4);
+        this.cloud2 = new Cloud(450, 15, 4);
+        this.cloud3 = new Cloud(330, 100, 2);
+        this.cloud4 = new Cloud(520, 115, 2);
+        this.cloud5 = new Cloud(360, 160, 1);
+        this.cloud6 = new Cloud(90, 130, 1);
 
         this.sh = new SmallShip(GetRandom.getRandom(1, 250), 250, new Color(214, 130, 70));
         this.sh2 = new SmallShip(GetRandom.getRandom(280, 500), 250, new Color(172,140,79));
@@ -61,14 +70,21 @@ public class DrawPanel extends JPanel implements ActionListener {
         g.fillRect(0, 260, 800, 2);
 
 
+
+        cloud1.drawCloud(gr);
+        cloud2.drawCloud(gr);
+        cloud3.drawCloud(gr);
+        cloud4.drawCloud(gr);
+        cloud5.drawCloud(gr);
+        cloud6.drawCloud(gr);
+
+
         smallShipV2.drawShip(gr);
         sh.drawShip(gr);
         sh2.drawShip(gr);
         bigShip.setX(ticksFromStart1);
         bigShip.drawShip(gr);
 
-        cloudR.drawRealityCloud(gr);
-        cloudR2.drawRealityCloud(gr);
 
         pier.drawPier(gr);
         title.printTittle(gr);
