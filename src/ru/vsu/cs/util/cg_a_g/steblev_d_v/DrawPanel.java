@@ -31,8 +31,14 @@ public class DrawPanel extends JPanel implements ActionListener {
     private final Title title;
     private final Lifebuoy lifebuoy1;
     private final Lifebuoy lifebuoy2;
-
     private final Lifebuoy shipLifebuoy;
+
+    private final Wave wave;
+    private final Wave wave1;
+    private final Wave wave2;
+    private final Wave wave3;
+    private double phase;
+
 
 
 
@@ -58,6 +64,12 @@ public class DrawPanel extends JPanel implements ActionListener {
         this.lifebuoy1 = new Lifebuoy(GetRandom.getRandom(1, 100), 185, 2);
         this.lifebuoy2 = new Lifebuoy(GetRandom.getRandom(200, 300), 185, 2);
 
+        this.wave = new Wave(ticksFromStart1, 1, 10, new Color(0xC75193D5, true), new BasicStroke(7));
+        this.wave1 = new Wave(ticksFromStart1, 1, 10, new Color(0xC75193D5, true), new BasicStroke(9));
+        this.wave2 = new Wave(ticksFromStart1, 1, 10, new Color(0x3E5194D8, true),
+                new BasicStroke(1));
+        this.wave3 = new Wave(ticksFromStart1, 1, 10, new Color(0x383678B9, true),
+                new BasicStroke(7));
 
 
     }
@@ -82,7 +94,7 @@ public class DrawPanel extends JPanel implements ActionListener {
 
         // Линия горизонта
         g.setColor(Color.black);
-        g.fillRect(0, 260, 800, 2);
+        g.fillRect(0, 260, 800, 1);
 
 
 
@@ -94,9 +106,24 @@ public class DrawPanel extends JPanel implements ActionListener {
         cloud6.drawCloud(gr);
 
 
+
+
         smallShipV2.drawShip(gr);
         sh.drawShip(gr);
         sh2.drawShip(gr);
+
+
+
+        wave1.draw(g);
+        int width1 = 300;
+        int centerY1 = 548 / 2;
+        int amplitude1 = 65 / 10;
+        for (int x = ticksFromStart1 - 80; x < ticksFromStart1 + 330; x++) {
+            int y = (int) (amplitude1 * Math.sin((2 * Math.PI / 150) * x + phase) + centerY1);
+            gr.drawLine(x, y, x + 5, y + 5);
+        }
+        g.setStroke(new BasicStroke(1));
+
         bigShip.setX(ticksFromStart1);
         shipLifebuoy.setX(ticksFromStart1 + 140);
         bigShip.drawShip(gr);
@@ -108,6 +135,37 @@ public class DrawPanel extends JPanel implements ActionListener {
         lifebuoy1.drawLifebuoy(gr);
         lifebuoy2.drawLifebuoy(gr);
 
+
+        wave.draw(g);
+        int width = 300;
+        int centerY = 556 / 2;
+        int amplitude = 65 / 14;
+        for (int x = ticksFromStart1 - 80; x < ticksFromStart1 + 330; x++) {
+            int y = (int) (amplitude * Math.sin((2 * Math.PI / 150) * x + phase) + centerY);
+            gr.drawLine(x, y, x + 5, y + 5);
+        }
+
+
+
+        wave2.draw(g);
+        int centerY2 = 600 / 2;
+        int amplitude4 = 65 / 14;
+        for (int x = ticksFromStart1 - 70; x < ticksFromStart1 + 290; x++) {
+            int y = (int) (amplitude4 * Math.sin((2 * Math.PI / 150) * x + phase) + centerY2);
+            gr.drawLine(x, y, x, y);
+        }
+
+        wave3.draw(g);
+        int amplitude2 = 65 / 14;
+        int centerY3 = 576 / 2;
+        for (int x = ticksFromStart1 - 110; x < ticksFromStart1 + 320; x++) {
+            int y = (int) (amplitude2 * Math.sin((2 * Math.PI / 150) * x + phase) + centerY3);
+            gr.drawLine(x, y, x, y);
+        }
+
+
+
+
     }
 
     @Override
@@ -116,5 +174,12 @@ public class DrawPanel extends JPanel implements ActionListener {
             repaint();
             ++ticksFromStart1;
         }
+
+        wave.animate();
+        wave1.animate();
+        wave2.animate();
+        wave3.animate();
+        phase += 0.3;
+        repaint();
     }
 }
