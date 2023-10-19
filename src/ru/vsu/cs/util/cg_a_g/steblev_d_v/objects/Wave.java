@@ -1,44 +1,32 @@
 package ru.vsu.cs.util.cg_a_g.steblev_d_v.objects;
 
+import ru.vsu.cs.util.cg_a_g.steblev_d_v.DrawPanel;
+
 import java.awt.*;
 import java.awt.geom.GeneralPath;
 
+import static ru.vsu.cs.util.cg_a_g.steblev_d_v.DrawPanel.ticksFromStart1;
+
 public class Wave {
-    private int x, y;
-    private int height;
-    private int phase;
+    private int width;
+    private double amplitude;
+    private double centerY;
     private Color color;
 
-    private BasicStroke basicStroke;
-
-    public Wave (int x, int y, int height, Color color, BasicStroke basicStroke) {
-        this.x = x;
-        this.y = y;
-        this.height = height;
-        this.phase = 0;
+    public Wave(int width, double amplitude, double centerY, Color color) {
+        this.width = width;
+        this.amplitude = amplitude;
+        this.centerY = centerY;
         this.color = color;
-        this.basicStroke = basicStroke;
     }
 
     public void draw(Graphics2D g) {
-        GeneralPath path = new GeneralPath();
-        path.moveTo(x, y);
-
-        for (int i = 0; i <= height; i += 10) {
-            int offsetX = (int) (10 * Math.sin(Math.toRadians(i + phase)));
-            path.lineTo(x + offsetX, y - i);
-        }
-
         g.setColor(color);
-        g.setStroke(basicStroke);
-        g.draw(path);
-
-    }
-
-    public void animate() {
-        phase += 5;
-        if (phase > 360) {
-            phase -= 360;
+        g.setStroke(new BasicStroke(5));
+        for (int x = ticksFromStart1 - 80; x < ticksFromStart1 + 330; x++) {
+            int y = (int) (amplitude * Math.sin((2 * Math.PI / 150) * x + DrawPanel.phase) + centerY);
+            g.drawLine(x, y, x + 5, y + 5);
         }
+        g.setStroke(new BasicStroke(1));
     }
 }
